@@ -1,0 +1,26 @@
+name-template: 'v$RESOLVED_VERSION'
+tag-template: 'v$RESOLVED_VERSION'
+categories:
+  - title: 'Web Tool Updates'
+    label: 'web-tool'
+  - title: 'Data Processing'
+    label: 'data'
+  - title: 'Documentation'
+    label: 'documentation'
+
+change-template: '- $TITLE @$AUTHOR ([#$NUMBER]($URL))'
+change-title-escapes: '\<*_&#@'
+version-resolver:
+  major:
+    labels:
+      - 'major'
+  minor:
+    labels:
+      - 'minor'
+  default: minor
+version-template: 'v20YY.MM.$PATCH'
+exclude-labels:
+  - 'skip-changelog'
+template: |
+  ## Release v$RESOLVED_VERSION
+  $CHANGES
